@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mole Prediction App</title>
+    <style>
+        .upload_btn{
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+
+        }
+        .sub{
+        border: 2px solid gray;
+        color: gray;
+        background-color: white;
+        padding: 8px 20px;
+        border-radius: 6px;
+        font-size: 15px;
+        font-weight: bold;
+
+        }
+
+
+        #fileupload {
+        text-align: center;
+        margin: auto;
+        }
+        body {
+  margin : 30px 400px 20px;
+  background-color: black;
+}
+
+.fullscreen {
+  width : 50vw;
+  height : 50vh;
+}
+
+.table-cell {
+  display : table-cell;
+  background : lightgrey;
+}
+
+.valign-middle {
+  vertical-align : middle;
+}
+
+.text-center {
+  text-align : center;
+}
+h3{
+text-align:center;
+color:white;
+}
+#lab{
+margin: 0px
+}
+
+    </style>
+
+</head>
+<body>
+<form action="/predict" method="post" enctype="multipart/form-data">
+    <div class="fullscreen table-cell valign-middle text-center">
+        <label for="fileupload" id="lab"><b>Upload Image(BMP/JPG/PNG)</b></label><br>
+        <input type="file" name="image" id="fileupload" accept="image/*"  >
+     <div class="form-group">
+        <img id="show_image" width="300" >
+    </div>
+
+
+        <input type="submit" class='sub' value="predict" >
+        </div>
+    <br>
+    <h3>Prediction:<i style="color:cyan;font-size:30px">{{prediction}}</i></h3>
+
+
+
+
+
+</form>
+
+</body>
+</html>
