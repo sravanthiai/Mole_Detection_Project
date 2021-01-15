@@ -1,9 +1,13 @@
 import numpy as np
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.models import load_model
+import os
 
 # from preprocess.preprocessing import test_generator
-model = load_model('C:/Users/Davy Mariko/Desktop/becode_projects/project/Mole_Detection_Project/model/mole_detector.h5')
+PATH_MODEL = os.getcwd()
+
+MODEL_FOLDER = PATH_MODEL +'\\model\\mole_detector.h5'
+model = load_model(MODEL_FOLDER)
 
 
 def predict(image_file):

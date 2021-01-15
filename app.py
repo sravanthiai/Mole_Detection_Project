@@ -2,11 +2,15 @@ from flask import Flask, request, render_template
 import os
 from predict.predicting import predict
 app = Flask(__name__)
-UPLOAD_FOLDER = "C:/Users/Davy Mariko/Desktop/becode_projects/project/Mole_Detection_Project/static/"
+PATH = os.getcwd()
+
+UPLOAD_FOLDER = PATH+'\\static'
+print(UPLOAD_FOLDER)
 
 
 @app.route('/', methods=['GET', 'POST'])
 def upload():
+    print(UPLOAD_FOLDER)
     return render_template('mole_predict.html')
 
 
