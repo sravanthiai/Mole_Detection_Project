@@ -18,7 +18,7 @@
         border-radius: 6px;
         font-size: 15px;
         font-weight: bold;
-
+        margin: 70px
         }
 
 
@@ -53,21 +53,38 @@ text-align:center;
 color:white;
 }
 #lab{
-margin: 0px
+background-color: indigo;
+  color: white;
+  padding: 0.5rem;
+  font-family: sans-serif;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  margin-top: 10px;
+}
+div.lab1{
+position:0px
+margin:40px
+}
+#lab2{
+font-size:30px;
 }
 
     </style>
 
+
 </head>
 <body>
 <form action="/predict" method="post" enctype="multipart/form-data">
-    <div class="fullscreen table-cell valign-middle text-center">
-        <label for="fileupload" id="lab"><b>Upload Image(BMP/JPG/PNG)</b></label><br>
-        <input type="file" name="image" id="fileupload" accept="image/*"  >
-     <div class="form-group">
-        <img id="show_image" width="300" >
-    </div>
 
+
+
+
+
+        <input type="file" name="image" id="fileupload" accept="image/*" onchange="loadFile(event)" style="display: none;" hidden/>
+     <div>
+        <img id="show_image" width="300" >
+
+</div>
 
         <input type="submit" class='sub' value="predict" >
         </div>
@@ -75,10 +92,7 @@ margin: 0px
     <h3>Prediction:<i style="color:cyan;font-size:30px">{{prediction}}</i></h3>
 
 
-
-
-
-</form>
+ </form>
 
 </body>
 </html>
