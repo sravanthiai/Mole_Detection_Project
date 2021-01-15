@@ -5,94 +5,96 @@
     <title>Mole Prediction App</title>
     <style>
         .upload_btn{
-        position: relative;
-        overflow: hidden;
-        display: inline-block;
-
+          position: relative;
+          overflow: hidden;
+          display: inline-block;
         }
         .sub{
-        border: 2px solid gray;
-        color: gray;
-        background-color: white;
-        padding: 8px 20px;
-        border-radius: 6px;
-        font-size: 15px;
-        font-weight: bold;
-        margin: 70px
+          border: 2px solid gray;
+          color: gray;
+          background-color: white;
+          padding: 8px 20px;
+          border-radius: 6px;
+          font-size: 15px;
+          font-weight: bold;
+          margin: 70px
         }
 
 
         #fileupload {
-        text-align: center;
-        margin: auto;
+          text-align: center;
+          margin: auto;
         }
         body {
-  margin : 30px 400px 20px;
-  background-color: black;
-}
+          margin : 30px 400px 20px;
+          background-color: black;
+          }
 
-.fullscreen {
-  width : 50vw;
-  height : 50vh;
-}
+        .fullscreen {
+          width : 50vw;
+          height : 50vh;
+        }
 
-.table-cell {
-  display : table-cell;
-  background : lightgrey;
-}
+        .table-cell {
+          display : table-cell;
+          background : lightgrey;
+        }
 
-.valign-middle {
-  vertical-align : middle;
-}
+        .valign-middle {
+          vertical-align : middle;
+        }
 
-.text-center {
-  text-align : center;
-}
-h3{
-text-align:center;
-color:white;
-}
-#lab{
-background-color: indigo;
-  color: white;
-  padding: 0.5rem;
-  font-family: sans-serif;
-  border-radius: 0.3rem;
-  cursor: pointer;
-  margin-top: 10px;
-}
-div.lab1{
-position:0px
-margin:40px
-}
-#lab2{
-font-size:30px;
-}
+        .text-center {
+          text-align : center;
+        }
+        h3{
+          text-align:center;
+          color:white;
+        }
+        #lab{
+          background-color: indigo;
+          color: white;
+          padding: 0.5rem;
+          font-family: sans-serif;
+          border-radius: 0.3rem;
+          cursor: pointer;
+          margin-top: 10px;
+        }
+        div.lab1{
+          position:0px;
+          margin:40px
+        }
+        #lab2{
+          font-size:30px;
+        }
 
     </style>
-
 
 </head>
 <body>
 <form action="/predict" method="post" enctype="multipart/form-data">
 
-
-
-
-
-        <input type="file" name="image" id="fileupload" accept="image/*" onchange="loadFile(event)" style="display: none;" hidden/>
-     <div>
+    <div class="fullscreen table-cell valign-middle text-center">
+      <div><label id="lab2" > <b>Mole Image Classifier</b></label></div><br>
+      <div class="lab1"><label for="fileupload" id="lab"><b>Choose File</b></label></div><br>
+      <input type="file" name="image" id="fileupload" accept="image/*" onchange="loadFile(event)" style="display: none;" hidden/>
+      <div>
         <img id="show_image" width="300" >
+      </div>
 
-</div>
+      <input type="submit" class='sub' value="predict">
 
-        <input type="submit" class='sub' value="predict" >
-        </div>
+    </div>
     <br>
     <h3>Prediction:<i style="color:cyan;font-size:30px">{{prediction}}</i></h3>
 
 
  </form>
-
+<script>
+var loadFile = function(event) {
+	var image = document.getElementById('show_image');
+	image.src = URL.createObjectURL(event.target.files[0]);
+};
+</script>
 </body>
 </html>

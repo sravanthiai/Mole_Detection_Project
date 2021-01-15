@@ -2,7 +2,7 @@ from flask import Flask, request, render_template
 import os
 from predict.predicting import predict
 app = Flask(__name__)
-UPLOAD_FOLDER = "E:/BeCodeProjects/Mole_Detection_Project/static/"
+UPLOAD_FOLDER = "C:/Users/Davy Mariko/Desktop/becode_projects/project/Mole_Detection_Project/static/"
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -25,5 +25,6 @@ def upload_predict():
     return render_template('mole_predict.html')
 
 
-if __name__ == '__main__':
-    app.run(port=5000)
+if __name__ == 'main':
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host="0.0.0.0", threaded=True, port=port)
