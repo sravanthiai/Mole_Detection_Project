@@ -72,5 +72,24 @@ You'll need the packages/software described above.
       **IMPORTANT NOTE**: While with localhost and Docker it is not mandatory to specify the PORT, if one would like to deploy on Heroku, the port needs to be specified within the 'app.py' to avoid crashes.
       
 
+# The API
+
+API recieves an image, and returns a response 'you are in danger' or 'you're not in danger'.
+
+| Problem |	Data	| Methods |	Libs | Link |
+|---------|-------|---------|------|------|
+|Deployment|	Image input|GET, POST	|```flask```|(https://github.com/manasanoolu7/Mole_Detection_Project/blob/main/app.py) |
+
+* **Url**:
+
+https://mole-detection.herokuapp.com/
+
+
+* **Success Response:**
+
+# Deployement
+
+
+
  
 
